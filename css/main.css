@@ -1,0 +1,198 @@
+.text-primary {
+  color: #000000;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.header1 {
+  font-size: 100pt;
+  font-weight: 600;
+  color: rgb(3, 54, 54);
+  text-align: center;
+}
+
+.header2 {
+  font-size: 30pt;
+  font-weight: 600;
+  color: rgb(75, 75, 75);
+  text-align: center;
+}
+
+.progress {
+  height: 20px !important;
+  border-radius: 10px !important;
+}
+
+.progress-bar {
+  background-color: rgb(3, 54, 54) !important;
+  width: var(--value);
+  border-radius: 10px;
+}
+
+.card {
+  background-color: rgb(3, 54, 54) !important;
+  padding-top: 5px;
+  border-radius: 10px !important;
+}
+
+.footer {
+  font-size: 15pt;
+  font-weight: 600;
+  color: rgb(75, 75, 75);
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 100px;
+}
+
+.img {
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+  margin-bottom: 85px;
+  max-width: 100%;
+  width: 40%;
+  height: auto;
+}
+
+.container-fluid {
+  position: relative;
+  width: 50% auto;
+  align-content: center;
+}
+
+.container-link {
+  position: relative;
+  align-items: center;
+  padding: 60px;
+}
+
+.rounded2 {
+  border-radius: 10px;
+}
+
+.imgsmall {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+ul {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+  text-decoration: none;
+}
+
+ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+  font-size: 35px;
+}
+
+ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+ul li:nth-child(2) a:before {
+  background: #5f9ea0;
+}
+
+ul li:nth-child(3) a:before {
+  background: #3f393f;
+}
+
+ul li:nth-child(4) a:before {
+  background: #3a52bc;
+}
+
+ul li:nth-child(5) a:before {
+  background: #da70d6;
+}
+
+ul li:nth-child(6) a:before {
+  background: #22b44e;
+}
+
+ul li:nth-child(7) a:before {
+  background: #ec5813;
+}
+
+@media(min-width: 766px) {
+  ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+  }
+
+  ul li a:hover:before {
+    top: 0;
+  }
+
+  ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .header1 {
+    padding-top: 30px;
+    font-size: 30pt !important;
+  }
+
+  ul {
+    position: relative;
+    display: block;
+    transform: none;
+    left: 0px;
+    top: 0px;
+  }
+
+  ul li a {
+    width: auto;
+  }
+
+  .header2 {
+    font-size: 20pt !important;
+  }
+
+  .container-link {
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}
