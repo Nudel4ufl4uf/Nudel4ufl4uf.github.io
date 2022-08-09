@@ -1,9 +1,6 @@
+/*Text Styles*/
 .text-primary {
   color: #000000;
-}
-
-.alignCenter {
-  text-align: center;
 }
 
 .header1 {
@@ -20,6 +17,36 @@
   text-align: center;
 }
 
+.text_ref {
+  font-size: 20pt;
+  padding: 5px;
+  color: rgb(75, 75, 75);
+  margin: 0pt;
+}
+
+.header_pr {
+  font-size: 20;
+  font-weight: bold;
+  color: rgb(3, 54, 54);
+  ;
+}
+
+.text_pr {
+  font-size: 13pt;
+  color: rgb(75, 75, 75);
+}
+
+/*Alignment Styles*/
+.alignCenter {
+  text-align: center;
+}
+
+/*Row Style*/
+.row_pr {
+  padding: 100px;
+}
+
+/*Progressbar Styles*/
 .progress {
   height: 20px !important;
   border-radius: 10px !important;
@@ -31,31 +58,30 @@
   border-radius: 10px;
 }
 
-.card {
+/*CardStyles*/
+.card_cert {
   background-color: rgb(3, 54, 54) !important;
   padding-top: 5px;
   border-radius: 10px !important;
 }
 
-.footer {
-  font-size: 15pt;
-  font-weight: 600;
-  color: rgb(75, 75, 75);
-  text-align: center;
-  margin-bottom: 60px;
-  margin-top: 100px;
+.card_pr {
+  border-radius: 10px !important;
 }
 
-.img {
-  align-content: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 85px;
-  margin-bottom: 85px;
-  max-width: 100%;
-  width: 40%;
-  height: auto;
+.card_ref {
+  align-items: center;
+}
+
+/*Link Styles*/
+.a_ref {
+  text-decoration: none;
+}
+
+/*Container Styles*/
+.container_ref {
+  align-items: center;
+  margin-top: 30px;
 }
 
 .container-fluid {
@@ -70,8 +96,27 @@
   padding: 60px;
 }
 
-.rounded2 {
-  border-radius: 10px;
+/*Section Styles*/
+.footer {
+  font-size: 15pt;
+  font-weight: 600;
+  color: rgb(75, 75, 75);
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 100px;
+}
+
+/*Images Styles*/
+.img {
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+  margin-bottom: 85px;
+  max-width: 100%;
+  width: 40%;
+  height: auto;
 }
 
 .imgsmall {
@@ -79,6 +124,17 @@
   margin-bottom: 40px;
 }
 
+.img_pr {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/*General Styles*/
+.rounded2 {
+  border-radius: 10px;
+}
+
+/*LinkList Styles*/
 ul {
   display: flex;
   position: absolute;
@@ -146,6 +202,8 @@ ul li:nth-child(7) a:before {
   background: #ec5813;
 }
 
+
+/*Media Size Styles*/
 @media(min-width: 766px) {
   ul li a:hover .icon {
     color: #fff;
@@ -172,7 +230,16 @@ ul li:nth-child(7) a:before {
 @media (max-width: 767px) {
   .header1 {
     padding-top: 30px;
-    font-size: 30pt !important;
+    font-size: 50pt !important;
+  }
+
+  .row_pr {
+    padding: 10px;
+  }
+
+  .container-link {
+    padding-top: 1px;
+    padding-bottom: 1px;
   }
 
   ul {
@@ -191,8 +258,5 @@ ul li:nth-child(7) a:before {
     font-size: 20pt !important;
   }
 
-  .container-link {
-    padding-top: 1px;
-    padding-bottom: 1px;
-  }
+
 }
