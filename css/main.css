@@ -41,6 +41,15 @@
   text-align: center;
 }
 
+/*Color Style*/
+.green{
+  color: rgb(6, 112, 6);
+}
+
+.grey{
+  color: rgb(75, 75, 75);
+}
+
 /*Row Style*/
 .row_pr {
   padding: 100px;
@@ -61,7 +70,6 @@
 /*CardStyles*/
 .card_cert {
   background-color: rgb(3, 54, 54) !important;
-  padding-top: 5px;
   border-radius: 10px !important;
 }
 
