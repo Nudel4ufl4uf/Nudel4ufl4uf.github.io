@@ -1,8 +1,4 @@
 /*Text Styles*/
-.text-primary {
-  color: #000000;
-}
-
 .header1 {
   font-size: 100pt;
   font-weight: 600;
@@ -41,7 +37,7 @@
   text-align: center;
 }
 
-/*Color Style*/
+/*Color Styles*/
 .green{
   color: rgb(6, 112, 6);
 }
@@ -265,6 +261,5 @@ ul li:nth-child(7) a:before {
   .header2 {
     font-size: 20pt !important;
   }
-
 
 }
