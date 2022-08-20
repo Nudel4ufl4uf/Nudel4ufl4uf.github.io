@@ -23,7 +23,7 @@
 .header_pr {
   font-size: 20;
   font-weight: bold;
-  color: rgb(3, 54, 54);
+  color: rgb(255, 255, 255);
   ;
 }
 
@@ -65,6 +65,11 @@
 
 /*CardStyles*/
 .card_cert {
+  background-color: rgb(3, 54, 54) !important;
+  border-radius: 10px !important;
+}
+
+.card-header{
   background-color: rgb(3, 54, 54) !important;
   border-radius: 10px !important;
 }
