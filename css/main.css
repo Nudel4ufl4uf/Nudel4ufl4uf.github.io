@@ -196,61 +196,40 @@ ul li:nth-child(3) a:before {
 }
 
 ul li:nth-child(4) a:before {
-  background: #3a52bc;
-}
-
-ul li:nth-child(5) a:before {
   background: #da70d6;
 }
 
-ul li:nth-child(6) a:before {
+ul li:nth-child(5) a:before {
   background: #22b44e;
 }
 
-ul li:nth-child(7) a:before {
+ul li:nth-child(6) a:before {
   background: #ec5813;
 }
 
 
-/*Media Size Styles*/
-@media(min-width: 766px) {
-  ul li a:hover .icon {
-    color: #fff;
-    transform: rotateY(360deg);
-  }
-
-  ul li a:hover:before {
-    top: 0;
-  }
-
-  ul li a:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background: #f00;
-    transition: .5s;
-    z-index: 2;
-  }
+ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
 }
 
-@media (max-width: 767px) {
-  .header1 {
-    padding-top: 30px;
-    font-size: 50pt !important;
-  }
+ul li a:hover:before {
+  top: 0;
+}
 
-  .row_pr {
-    padding: 10px;
-  }
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
 
-  .container-link {
-    padding-top: 1px;
-    padding-bottom: 1px;
-  }
-
+@media (max-width: 991px) {
   ul {
     position: relative;
     display: block;
@@ -258,9 +237,19 @@ ul li:nth-child(7) a:before {
     left: 0px;
     top: 0px;
   }
+  ul li:nth-child(1) a:before {
+    background: rgb(3, 54, 54);
+  }
+  
+  ul li:nth-child(2) a:before {
+    background: rgb(3, 54, 54);
+  }
+}
 
-  ul li a {
-    width: auto;
+@media (max-width: 767px) {
+  .header1 {
+    padding-top: 30px;
+    font-size: 30pt !important;
   }
 
   .header2 {
