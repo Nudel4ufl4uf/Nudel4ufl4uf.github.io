@@ -20,11 +20,14 @@
   margin: 0pt;
 }
 
+.text_navlink{
+  color: rgb(75, 75, 75);
+}
+
 .header_pr {
   font-size: 20;
   font-weight: bold;
   color: rgb(255, 255, 255);
-  ;
 }
 
 .text_pr {
@@ -66,6 +69,16 @@
 /*CardStyles*/
 .card_cert {
   background-color: rgb(3, 54, 54) !important;
+  border-radius: 10px !important;
+}
+
+.card_NavDeac {
+  background-color: rgb(3, 54, 54) !important;
+  border-radius: 10px !important;
+}
+
+.card_NavAc {
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px !important;
 }
 
