@@ -1,3 +1,48 @@
+/*Animations*/
+.projectAnim1{
+  animation: slideUpVeryLong .6s ease ;
+}
+
+.projectAnim2{
+  animation: slideUpVeryLong .8s ease ;
+}
+
+.projectAnim3{
+  animation: slideUpVeryLong .9s ease ;
+}
+
+.imgAnim{
+  animation: expandRL .8s ease forwards;
+  transition: all .8s ease;
+}
+
+.containerAnim{
+  animation: expandLR .8s ease forwards;
+  transition: all .8s ease;
+}
+
+.containerAnimRev{
+  animation: expandRL .8s ease forwards;
+  transition: all .8s ease;
+}
+
+.pConAnim{
+    animation: slideUpLong .7s ease-in-out ;
+}
+
+.imgAnimSmall {
+  animation: slideUp .9s ease-in-out ;
+}
+
+.paraAnimSmall {
+  animation: slideUp .7s ease-in-out ;
+}
+
+.headerAnim {
+  animation: slideUp .8s ease ;
+}
+
+
 /*Text Styles*/
 .header1 {
   font-size: 100pt;
@@ -13,6 +58,7 @@
   text-align: center;
 }
 
+
 .text_ref {
   font-size: 20pt;
   padding: 5px;
@@ -27,7 +73,7 @@
 .header_pr {
   font-size: 20;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: rgb(3, 54, 54);
 }
 
 .text_pr {
@@ -51,7 +97,8 @@
 
 /*Row Style*/
 .row_pr {
-  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 /*Progressbar Styles*/
@@ -271,4 +318,66 @@ ul li a:before {
 
 }
 
-/* ////////////////////////////////////////////// */
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideDown {
+  100% {
+    transform: translateY(300px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expandRL {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes expandLR {
+  0% {
+    transform: translateX(-1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideUpLong {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUpVeryLong {
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
