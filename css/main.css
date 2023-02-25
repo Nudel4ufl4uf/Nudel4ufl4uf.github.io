@@ -73,8 +73,15 @@
 .header_pr {
   font-size: 20;
   font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.header_prMain {
+  font-size: 20;
+  font-weight: bold;
   color: rgb(3, 54, 54);
 }
+
 
 .text_pr {
   font-size: 13pt;
