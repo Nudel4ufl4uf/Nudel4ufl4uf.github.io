@@ -1,13 +1,20 @@
-const buttons = document.getElementsByTagName("button");
-
-for (const button of buttons) {
-  button.addEventListener('click', () => {
-     var id = button.getAttribute("id");
-    
-     var layerClass = "." + id+ "-layer";
-     var layers = document.querySelectorAll(layerClass);
-     for (const layer of layers) {
-       layer.classList.toggle("active");
-     }
-  });
-}
+window.onload = () => {
+    // (A) GET LIGHTBOX & ALL .ZOOMD IMAGES
+    let all = document.getElementsByClassName("zoomD"),
+        lightbox = document.getElementById("lightbox");
+   
+    // (B) CLICK TO SHOW IMAGE IN LIGHTBOX
+    // * SIMPLY CLONE INTO LIGHTBOX & SHOW
+    if (all.length>0) { for (let i of all) {
+      i.onclick = () => {
+        let clone = i.cloneNode();
+        clone.className = "";
+        lightbox.innerHTML = "";
+        lightbox.appendChild(clone);
+        lightbox.className = "show";
+      };
+    }}
+   
+    // (C) CLICK TO CLOSE LIGHTBOX
+    lightbox.onclick = () => lightbox.className = "";
+  };
