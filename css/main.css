@@ -59,6 +59,14 @@
   margin-bottom: 50pt;
 }
 
+.header2Small {
+  font-size: 30pt;
+  font-weight: 600;
+  color: rgb(75, 75, 75);
+  text-align: center;
+  margin-bottom: 20pt;
+}
+
 .text_ref {
   font-size: 20pt;
   padding: 5px;
