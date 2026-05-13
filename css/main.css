@@ -157,6 +157,26 @@
   border-radius: 10px !important;
 }
 
+.prince2-block .card-body {
+  flex-wrap: nowrap;
+}
+
+.prince2-block .prince2-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prince2-block .prince2-logo {
+  max-width: 120px;
+}
+
+@media (max-width: 680px) {
+  .prince2-block .prince2-logo {
+    display: none !important;
+  }
+}
+
 .card_NavDeac {
   background-color: rgb(3, 54, 54) !important;
   border-radius: 10px !important;
