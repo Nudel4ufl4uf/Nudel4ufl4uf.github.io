@@ -9,7 +9,7 @@
   /* ---------- German texts (English is taken from the HTML itself) ---------- */
   var DE = {
     skip: 'Zum Inhalt springen',
-    navHome: 'Profil', navPortfolio: 'Portfolio', zoomLabel: 'Bild vergrößern',
+    navHome: 'Profil', navPortfolio: 'Portfolio', zoomLabel: 'Bild vergrößern', menuLabel: 'Menü',
     navExp: 'Werdegang', navSkills: 'Skills', navProjects: 'Projekte', navContact: 'Kontakt',
     langLabel: 'Sprache', darkLabel: 'Dunkelmodus', accentLabel: 'Akzentfarbe',
     accGreen: 'Grün', accTeal: 'Petrol', accBlue: 'Blau', accAmber: 'Bernstein',
@@ -149,6 +149,21 @@
   /* ---------- Footer year ---------- */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn = document.getElementById('menu-toggle');
+  var navEl = menuBtn && menuBtn.closest('.nav');
+  if (navEl) {
+    var setMenu = function (open) {
+      navEl.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!navEl.classList.contains('is-open')); });
+    navEl.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  }
 
   /* ---------- Image lightbox (project pages) ---------- */
   var box = document.getElementById('lightbox');

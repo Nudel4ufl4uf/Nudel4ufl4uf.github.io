@@ -107,6 +107,42 @@ button { font: inherit; }
 .nav-links a { color: var(--muted); text-decoration: none; padding: 10px 0; }
 .nav-links a:hover { color: var(--text); }
 
+.nav-panel { display: contents; }
+.menu-btn {
+  display: none; width: 44px; height: 44px; padding: 0; cursor: pointer;
+  place-items: center; border-radius: 12px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+}
+.menu-btn path { transform-origin: center; transition: transform .2s, opacity .2s; }
+.nav.is-open .bar-top { transform: translateY(5px) rotate(45deg); }
+.nav.is-open .bar-mid { opacity: 0; }
+.nav.is-open .bar-bot { transform: translateY(-5px) rotate(-45deg); }
+
+/* Small screens: brand + menu button on top, settings always visible below,
+   the page links fold out via the menu button. */
+@media (max-width: 880px) {
+  .nav { flex-wrap: wrap; padding-block: 8px; }
+  .menu-btn { display: grid; }
+  .nav-panel { display: contents; }
+  .controls { order: 2; width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 8px; }
+  .segmented button { min-width: 40px; padding: 0 10px; }
+  .swatches button { width: 30px; }
+  .nav-links {
+    display: none; order: 3; width: 100%; flex-direction: column; gap: 0;
+    font-size: 17px; border-top: 1px solid var(--border); margin-top: 4px;
+  }
+  .nav.is-open .nav-links { display: flex; }
+  .nav-links a { padding: 12px 0; }
+}
+@media (max-width: 400px) {
+  .controls { gap: 4px; }
+  .segmented button { min-width: 34px; padding: 0 8px; }
+  .icon-btn { width: 40px; height: 40px; }
+  .swatches { height: 40px; padding: 0 2px; }
+  .swatches button { width: 26px; }
+  .swatches span { width: 18px; height: 18px; }
+}
+
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 
 .segmented {
