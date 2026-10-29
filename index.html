@@ -1,301 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="green">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <link rel="shortcut icon" href="/img/index/LogoGreenRounded.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Philo Klemenz – IT Project Manager</title>
+  <meta name="description" content="Philo Klemenz – IT Project Manager at ITU Consult. PRINCE2® certified, B.Sc. Business Informatics (CAU Kiel).">
+  <meta name="theme-color" content="#F6F7F4">
+
+  <!-- Open Graph (link previews on LinkedIn, WhatsApp, …) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Philo Klemenz – IT Project Manager">
+  <meta property="og:description" content="IT project management, PRINCE2® certified, with a developer's background.">
+  <meta property="og:url" content="https://profile.philoklemenz.de/">
+  <meta property="og:image" content="https://profile.philoklemenz.de/img/index/portrait_half_cropped.jpg">
+
+  <link rel="icon" href="img/index/pk_logo_green_rounded.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Apply saved / system theme, accent and language before first paint (no flash) -->
+  <script>
+    (function () {
+      var d = document.documentElement, s = {};
+      try { s = JSON.parse(localStorage.getItem('pk-prefs') || '{}'); } catch (e) {}
+      var dark = typeof s.dark === 'boolean' ? s.dark
+        : !!(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+      d.setAttribute('data-theme', dark ? 'dark' : 'light');
+      d.setAttribute('data-accent', s.accent || 'green');
+      d.setAttribute('lang', s.lang || ((navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en'));
+    })();
+  </script>
+  <script src="assets/js/main.js" defer></script>
 </head>
-
 <body>
-  <div class="container max-w-screen-xl p-5 containerAnim">
+  <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
 
-    <div class="alignCenter">
-      <img src="/img/index/pk_logo_green.png" class="h-8 rounded2" width="100" height="100" />
-    </div>
-    <div class="container_ref">
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <div class="card_NavDeac">
-            <a class="a_ref" href="./index.html">
-              <h1 class="text-white p-2 m-2">Profile</h1>
-            </a>
-          </div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="img/index/pk_logo_green.png" alt="" width="36" height="36">
+        <span class="brand-name">Philo Klemenz</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#experience" data-i18n="navExp">Experience</a>
+        <a href="#skills" data-i18n="navSkills">Skills</a>
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="html/pages/projects.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="controls">
+        <div class="segmented" role="group" data-i18n-aria="langLabel" aria-label="Language">
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
         </div>
-        <div class="col-auto">
-          <div data-animation="1" class="card_Ac">
-            <a class="a_ref" href="/html/pages/projects.html">
-              <h1 class="text_navlink p-2 m-2">Portfolio</h1>
-            </a>
-          </div>
+
+        <button type="button" class="icon-btn" id="theme-toggle" aria-pressed="false" data-i18n-aria="darkLabel" aria-label="Dark mode">
+          <svg class="icon-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+
+        <div class="swatches" role="group" data-i18n-aria="accentLabel" aria-label="Accent color">
+          <button type="button" data-accent-pick="green" data-i18n-aria="accGreen" aria-label="Green"><span></span></button>
+          <button type="button" data-accent-pick="teal" data-i18n-aria="accTeal" aria-label="Teal"><span></span></button>
+          <button type="button" data-accent-pick="blue" data-i18n-aria="accBlue" aria-label="Blue"><span></span></button>
+          <button type="button" data-accent-pick="amber" data-i18n-aria="accAmber" aria-label="Amber"><span></span></button>
         </div>
       </div>
-    </div>
+    </nav>
+  </header>
 
-    <h1 class="header1">Philo Klemenz</h1>
+  <main id="top">
+    <!-- Hero -->
+    <section class="container hero">
+      <div class="hero-text">
+        <span class="badge"><span class="dot" aria-hidden="true"></span><span data-i18n="badge">IT Project Manager @ ITU Consult</span></span>
+        <h1 data-i18n="h1">I keep complex IT projects on track.</h1>
+        <p class="lead" data-i18n="intro">Hi, I'm Philo. I lead project teams in the automotive sector, currently on the One.Crypto projects for Volkswagen. B.Sc. in Business Informatics, PRINCE2® certified, with a developer's background.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact"><span data-i18n="cta1">Get in touch</span>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/philo-klemenz-3bb046234" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/Nudel4ufl4uf" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
 
-    <div class="d-none d-lg-block">
-      <div class="container-link">
-        <!--Block for Link Items in Device Size = Large only!-->
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/philo-klemenz-3bb046234"><i class="fab fa-linkedin-in icon"></i></a>
+      <div class="hero-media">
+        <figure class="portrait">
+          <span class="portrait-blob" aria-hidden="true"></span>
+          <img src="img/index/portrait_half_cropped.jpg" alt="Philo Klemenz" width="340" height="425"
+               onerror="this.style.display='none'">
+          <figcaption class="cert-card">
+            <span class="cert-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+            </span>
+            <span class="cert-text">
+              <a href="https://badges.peoplecert.org/Badge/en/766FFEEB-BBC3-49EB-B93A-3F7C33E4E824" target="_blank" rel="noopener"><strong>PRINCE2® Foundation</strong></a>
+              <span data-i18n="certSub">Certified project manager</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="container highlights" aria-label="Highlights">
+      <div class="stat"><span class="stat-value" data-i18n="h1v">Since 2024</span><span class="stat-label" data-i18n="h1l">in IT project management</span></div>
+      <div class="stat"><span class="stat-value">Volkswagen</span><span class="stat-label" data-i18n="h2l">Supplier for the SGSEC-Cluster at VW</span></div>
+      <div class="stat"><span class="stat-value">B.Sc.</span><span class="stat-label" data-i18n="h3l">Business Informatics, CAU Kiel</span></div>
+      <div class="stat"><span class="stat-value" data-i18n="h4v">3 years</span><span class="stat-label" data-i18n="h4l">living in Washington, D.C.</span></div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="band band-surface">
+      <div class="container split">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="navExp">Experience</span>
+          <h2 data-i18n="expH2">Where I've worked and studied</h2>
+        </div>
+        <ol class="timeline">
+          <li class="is-current">
+            <div class="tl-head"><h3 data-i18n="e1t">IT Project Manager</h3><span class="pill" data-i18n="current">Current</span></div>
+            <span class="tl-meta" data-i18n="e1m">ITU Consult GmbH · since 09/2024</span>
+            <p data-i18n="e1d">Leading the One.Crypto projects for Volkswagen: overall project management, steering all teams and keeping delivery on track from kickoff to rollout.</p>
+          </li>
+          <li class="is-recent">
+            <h3>Project Management Officer</h3>
+            <span class="tl-meta" data-i18n="e2m">ITU Consult GmbH · 01/2024 – 09/2024</span>
+            <p data-i18n="e2d">Supported the project lead of the SFD project for Volkswagen across a range of topics and led the project's support team.</p>
           </li>
           <li>
-            <a href="https://www.xing.com/profile/Philo_Klemenz"><i class="fab fa-xing icon"></i></a>
+            <h3 data-i18n="e3t">B.Sc. Business Informatics</h3>
+            <span class="tl-meta" data-i18n="e3m">Kiel University (CAU) · 2019 – 2023</span>
+            <p><span data-i18n="e3d">Informatics, business, economics, law and IT security, specialised in IT project management. Thesis:</span>
+              <a href="html/pages/ProcessDokuBa_project.html" data-i18n="thesis">Augmented Reality in Logistics Processes</a>.</p>
           </li>
           <li>
-            <a href="https://github.com/Nudel4ufl4uf"><i class="fab fa-github icon"></i></a>
+            <h3>Abitur</h3>
+            <span class="tl-meta" data-i18n="e4m">German School Washington, D.C. &amp; Philipp-Melanchthon-Gymnasium Meine · 2019</span>
+            <p data-i18n="e4d">Three years at the German School in Washington, D.C., then graduation in Meine with a focus on informatics, mathematics and physics.</p>
           </li>
-          <li>
-            <a href="https://www.instagram.com/philoklm/"><i class="fab fa-instagram icon"></i></a>
-          </li>
-          <li>
-            <a href="https://open.spotify.com/user/philo.klemenz?si=6MbnOqIfT-euw9bZKjMAdg&utm_source=copy-link"><i
-                class="fab fa-spotify icon" ></i></a>
-          </li>
-          <li>
-            <a
-              href="https://www.strava.com/athletes/philoklemenz"><i
-                class="fa-brands fa-strava icon"></i></a>
-          </li>
-        </ul>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container section">
+      <div class="section-head narrow">
+        <span class="eyebrow" data-i18n="navSkills">Skills</span>
+        <h2 data-i18n="skillsH2">Project manager who understands developers</h2>
+      </div>
+      <div class="cards">
+        <div class="skill-card featured">
+          <h3 data-i18n="g1">Project Management</h3>
+          <ul class="chips">
+            <li>PRINCE2® Foundation</li>
+            <li data-i18n="s1">Moderation &amp; presentation</li>
+            <li data-i18n="s2">Team leadership</li>
+            <li data-i18n="s3">Stakeholder management</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3 data-i18n="g2">Programming</h3>
+          <ul class="chips">
+            <li>Python</li><li>Java</li><li>C#</li><li>C / C++</li><li>Dart &amp; Flutter</li><li>Haskell</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3 data-i18n="g3">Web, Data &amp; Ops</h3>
+          <ul class="chips">
+            <li>HTML &amp; CSS</li><li>JavaScript</li><li>SQL</li><li>Bash</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="band band-accent">
+      <div class="container section">
+        <div class="section-row">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="navProjects">Projects</span>
+            <h2 data-i18n="projH2">Selected work</h2>
+          </div>
+          <a class="more-link" href="html/pages/projects.html" data-i18n="portfolio">View full portfolio →</a>
+        </div>
+        <div class="cards">
+          <a class="project-card" href="html/pages/ProcessDokuBa_project.html">
+            <div class="project-img has-img"><img src="img/projectIcons/bachelorSeehafenAR_logo.png" alt="" loading="lazy"></div>
+            <div class="project-body">
+              <span class="project-tag" data-i18n="p1tag">Bachelor thesis · 2023</span>
+              <h3 data-i18n="thesis">Augmented Reality in Logistics Processes</h3>
+              <p data-i18n="p1d">How AR can support and simplify processes in logistics.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://github.com/Nudel4ufl4uf" target="_blank" rel="noopener">
+            <div class="project-img has-img"><img src="img/projectIcons/spotyScripts_logo.png" alt="" loading="lazy"></div>
+            <div class="project-body">
+              <span class="project-tag">Side project · Python</span>
+              <h3 data-i18n="p2t">SpotiyBot</h3>
+              <p data-i18n="p2d">A self-built bot that refreshes genre "Radar" playlists every week.</p>
+            </div>
+          </a>
+          <a class="project-card" href="html/pages/projects.html">
+            <div class="project-img"><span>+</span></div>
+            <div class="project-body">
+              <span class="project-tag" data-i18n="p3tag">Portfolio</span>
+              <h3 data-i18n="p3t">More projects</h3>
+              <p data-i18n="p3d">Apps, tools and university projects – all in the full portfolio.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container section">
+      <div class="contact">
+        <div class="contact-text">
+          <h2 data-i18n="contactH2">Let's get in touch and talk about IT.</h2>
+          <p data-i18n="contactP">Open to new challenges and interesting topics. I usually reply within a day.</p>
+        </div>
+        <div class="contact-actions">
+          <!-- TODO: replace with your preferred contact address -->
+          <a class="btn btn-contact" href="mailto:philoklemenz@proton.me">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i18n="email">Send an email</span></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/philo-klemenz-3bb046234" target="_blank" rel="noopener" data-i18n="linkedin">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year">2026</span> Philo Klemenz</span>
+      <div class="footer-links">
+        <span data-i18n="offClock">Off the clock:</span>
+        <a href="https://open.spotify.com/user/philo.klemenz" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.strava.com/athletes/philoklemenz" target="_blank" rel="noopener">Strava</a>
+        <a href="https://www.instagram.com/philoklm/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <!--Block for Link Items in Device Size < Large only!-->
-    <div class="d-block d-lg-none">
-      <ul class="list-group list-group-horizontal d-flex justify-content-center">
-        <li class="list-group-item-light">
-          <a href="https://www.linkedin.com/in/philo-klemenz-3bb046234"><i class="fab fa-linkedin-in icon"></i></a>
-        </li>
-        <li class="list-group-item-light">
-          <a href="https://www.xing.com/profile/Philo_Klemenz"><i class="fab fa-xing icon"></i></a>
-        </li>
-        <li class="list-group-item-light">
-          <a href="https://github.com/Nudel4ufl4uf"><i class="fab fa-github icon"></i></a>
-        </li>
-      </ul>
-      <ul class="list-group list-group-horizontal d-flex justify-content-center">
-        <li class="list-group-item-light">
-          <a href="https://www.instagram.com/philoklm/"><i class="fab fa-instagram icon"></i></a>
-        </li>
-        <li class="list-group-item-light">
-          <a href="https://open.spotify.com/user/philo.klemenz?si=6MbnOqIfT-euw9bZKjMAdg&utm_source=copy-link"><i
-              class="fab fa-spotify icon"></i></a>
-        </li>
-        <li class="list-group-item-light">
-          <a
-            href="https://www.strava.com/athletes/philoklemenz"><i
-              class="fa-brands fa-strava icon"></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="py-24">
-    <div class="container max-w-screen-xl px-4 pb-5">
-      <div class="row align-items-top">
-
-        <!--Show small image only in Media Size < Large-->
-        <div class="imgsmall d-block d-lg-none col-12 col-lg-6 ms-lg-auto">
-          <img src="/img/index/portrait_half_cropped.jpg"
-            class="img-fluid shadow-4 position-relative rounded2 headerAnim" />
-        </div>
-        <div class="col-12 col-lg-5 mb-10 mb-lg-0">
-          <h1 class="ls-tight font-bolder display-3 my-5 headerAnim">
-            IT-Project- <br /> managmement <br /> @ ITU Consult GmbH.
-          </h1>
-          <p class="lead mb-10 paraAnimSmall">since 09.2024</p>
-          <p class="lead mb-10 paraAnimSmall">
-            At present, I'm engaged in full-time employment with ITU Consult GmbH, specifically 
-            on the One.Crypto Projects for Volkswagen. 
-            My role encompasses managing and supervising the project and all 
-            its teams. As such, I bear responsibility for the project's 
-            overall management, ensuring the smooth execution of various aspects throughout the entire project process.
-          </p>
-          <h1 class="ls-tight font-bolder display-3 my-5 headerAnim">
-            Project Management<br />Officer<br /> @ ITU Consult GmbH.
-          </h1>
-          <p class="lead mb-10 paraAnimSmall">01.2024 - 09.2024</p>
-          <p class="lead mb-10 paraAnimSmall">
-            My first project at ITU Consult GmbH was the SFD project for Volkswagen. 
-            I started of as Project Management Officer supporting the Project Lead at varius topics.
-            Further on I also supported the Support-Team of the project as team lead.
-          </p>
-          <a href="https://ituc.de/">
-            <img src="/img/index/itucLogo.png"
-              class="img-fluid shadow-4 position-relative rounded2 my-5 imgAnimSmall" />
-          </a>
-          <h1 class="ls-tight font-bolder display-3 my-5 headerAnim">
-            Student @ CAU<br />Business Informatics.
-          </h1>
-          <p class="lead mb-10 paraAnimSmall">08.2019 - 08.2023</p>
-          <p class="lead mb-10 paraAnimSmall">
-            During my tenure at CAU Kiel, I was exposed to a wide array of fascinating subjects across the fields of 
-            informatics, business, economics, law, and IT Security. 
-            I chose to specialize in IT-Project Management, culminating in my 
-            attainment of a bachelor's degree, the focus of which was likewise IT-Project Management.
-            <a href="/html/pages/ProcessDokuBa_project.html">"Augmented Reality in Logistic Processes"</a>.<br />
-          </p>
-          <a href="https://www.uni-kiel.de/">
-            <img src="/img/index/uni_cau.jpg" class="img-fluid shadow-4 position-relative rounded2 my-5 imgAnimSmall" />
-          </a>
-          <h1 class="ls-tight font-bolder display-3 my-5 pt-5 headerAnim">
-            Graduation<br />Gymnasium.
-          </h1>
-          <p class="lead mb-10 paraAnimSmall">08.2011 - 08.2012 & <br> 08.2015 - 08-2019</p>
-          <p class="lead mb-10 paraAnimSmall">
-            I graduated from the gymnasium in 2019 with priorities in
-            informatics as well as mathematics and physics at the Philipp Melanchthon
-            Gymnasium Meine.
-          </p>
-          <a href="https://pmg-meine.de/">
-            <img src="/img/index/gymnasium_pmg.png"
-              class="img-fluid shadow-4 position-relative rounded2 my-5 imgAnimSmall" />
-          </a>
-          <h1 class="ls-tight font-bolder display-3 my-5 pt-5 headerAnim">America.</h1>
-          <p class="lead mb-10 paraAnimSmall">08.2012 - 08.2015</p>
-          <p class="lead mb-10 paraAnimSmall">
-            Between 2011 and 2015, I resided in the United States of America, 
-            enhancing my English skills and becoming familiarized with American culture.
-          </p>
-          <p class="lead mb-10 paraAnimSmall">
-            At the German School Washington DC is where I pursued my studies, 
-            an institution known for its English-based teaching while maintaining the rigorous standards of German education.
-          </p>
-          <a href="https://giswashington.org/">
-            <img src="/img/index/gymnasium_gis.png"
-              class="img-fluid shadow-4 position-relative rounded2 my-5 imgAnimSmall" />
-          </a>
-          <h1 class="ls-tight font-bolder display-3 my-5 pt-5 headerAnim">Elementry School.</h1>
-          <p class="lead mb-10 paraAnimSmall">08.2008 - 08.2011</p>
-          <p class="lead mb-10 paraAnimSmall">
-            My educational career started in 2008 at the Grundschule am Zellberg in Meine Germany.
-            It was there that I laid the groundwork for all my future academic progress.
-          <a href="https://www.grundschule-am-zellberg.de/">
-            <img src="/img/index/elementary_zellberg.png"
-              class="img-fluid shadow-4 position-relative rounded2 my-5 imgAnimSmall" />
-          </a>
-        </div>
-
-        <div class="col-12 col-lg-6 ms-lg-auto paraAnimSmall">
-          <!--Show big image only in Media Size = Large-->
-          <div class="d-none d-lg-block">
-            <img src="/img/index/portrait_full_cropped.jpg"
-              class="img-fluid shadow-4 position-relative rounded2 headerAnim" />
-          </div>
-
-          <h3 class="ls-tight font-bolder display-3 pt-5">Programming Experience.</h3>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Java </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:85%" aria-valuenow="85" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> C++ </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:75%" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> C# </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:75%" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Python </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:50%" aria-valuenow="15" aria-valuemin="0"
-                aria-valuemax="50"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Dart & Flutter </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:70%" aria-valuenow="70" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> HTML & CSS </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:65%" aria-valuenow="65" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Java Script </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:25%" aria-valuenow="25" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> SQL </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:45%" aria-valuenow="25" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> C </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:35%" aria-valuenow="35" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Haskell </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:15%" aria-valuenow="15" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div>
-            <h3 class="ls-tight font-bolder display-9 mb-3 pt-5"> Bash </h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="--value:15%" aria-valuenow="15" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-          <h1 class="ls-tight font-bolder display-3 pt-5 headerAnim">Certificates.</h1>
-          <div class="card_cert text-white paraAnimSmall">
-            <h5 class="card-body"> Moderations- und Präsentationstechniken </h5>
-          </div>
-          <div class="card_cert text-white paraAnimSmall prince2-block">
-            <div class="card-body d-flex align-items-center justify-content-between">
-              <h5 class="prince2-title mb-0"> PRINCE2® Project Management Foundation </h5>
-              <a href="https://badges.peoplecert.org/Badge/en/766FFEEB-BBC3-49EB-B93A-3F7C33E4E824" title="PRINCE2® Foundation Certificate in Project Management" target="_blank">
-                <img src="img\index\prince2_foundation_small.png" alt="PRINCE2® Foundation Certificate in Project Management" class="prince2-logo img-fluid shadow-4 position-relative rounded2 imgAnimSmall" style="max-width: 120px;" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  </div>
-  <footer>
-    <p class="footer headerAnim"> © Philo Klemenz 2022 </p>
   </footer>
-  </head>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/03c142b1b9.js" crossorigin="anonymous"></script>
-  <script src="/html/functions/pageAnimations.js"></script>
 </body>
-
 </html>
