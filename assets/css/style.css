@@ -1,6 +1,6 @@
 /* ==========================================================================
    Philo Klemenz – Profile
-   Theme: data-theme="light|dark" · Accent: data-accent="green|teal|blue|amber"
+   Theme: data-theme="light|dark" · Accent: data-accent="green|bordeaux|blue|amber"
    ========================================================================== */
 
 /* ---------- Neutral tokens ---------- */
@@ -51,14 +51,20 @@
    --a-band                 : tinted section background
    --a-d-solid / --a-d-on   : buttons on the always-dark contact block   */
 :root[data-accent="green"] { --a-solid:#187A4A; --a-on-solid:#FFFFFF; --a-soft:#E3F0E8; --a-text:#14653F; --a-band:#EAF1EC; --a-d-solid:#7BD3A2; --a-d-on:#0C2418; }
-:root[data-accent="teal"]  { --a-solid:#0F766E; --a-on-solid:#FFFFFF; --a-soft:#DDF1EE; --a-text:#0D635C; --a-band:#E6F2F0; --a-d-solid:#5FD4C6; --a-d-on:#062521; }
+:root[data-accent="bordeaux"] { --a-solid:#8B1E3F; --a-on-solid:#FFFFFF; --a-soft:#F6E2E8; --a-text:#7A1634; --a-band:#F5EBEE; --a-d-solid:#E58AA3; --a-d-on:#2E0A14; }
 :root[data-accent="blue"]  { --a-solid:#2563EB; --a-on-solid:#FFFFFF; --a-soft:#E2EAFD; --a-text:#1D4ED8; --a-band:#EAEFFB; --a-d-solid:#8AB4FF; --a-d-on:#0B1A3A; }
 :root[data-accent="amber"] { --a-solid:#B45309; --a-on-solid:#FFFFFF; --a-soft:#FCEBDC; --a-text:#9A4508; --a-band:#F8EFE6; --a-d-solid:#F5A55C; --a-d-on:#2E1806; }
 
 :root[data-theme="dark"][data-accent="green"] { --a-solid:#7BD3A2; --a-on-solid:#0C2418; --a-soft:#18301F; --a-text:#8FDDB1; --a-band:#131D16; }
-:root[data-theme="dark"][data-accent="teal"]  { --a-solid:#5FD4C6; --a-on-solid:#062521; --a-soft:#123230; --a-text:#7EDFD3; --a-band:#111C1B; }
+:root[data-theme="dark"][data-accent="bordeaux"] { --a-solid:#E58AA3; --a-on-solid:#2E0A14; --a-soft:#3A1822; --a-text:#EFA3B8; --a-band:#1F1317; }
 :root[data-theme="dark"][data-accent="blue"]  { --a-solid:#8AB4FF; --a-on-solid:#0B1A3A; --a-soft:#1A2742; --a-text:#A5C4FF; --a-band:#121826; }
 :root[data-theme="dark"][data-accent="amber"] { --a-solid:#F5A55C; --a-on-solid:#2E1806; --a-soft:#36240F; --a-text:#F7B67A; --a-band:#1E1710; }
+
+/* Logo gradient per accent (same in light and dark mode) */
+:root[data-accent="green"] { --logo-1:#24A066; --logo-2:#0C5A38; }
+:root[data-accent="bordeaux"] { --logo-1:#B83255; --logo-2:#5E0F28; }
+:root[data-accent="blue"]  { --logo-1:#5B9BFF; --logo-2:#1B47C9; }
+:root[data-accent="amber"] { --logo-1:#FDB94E; --logo-2:#B8560A; }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -100,7 +106,7 @@ button { font: inherit; }
   gap: 12px 24px; padding-block: 12px;
 }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
-.brand-logo { width: 36px; height: 36px; border-radius: 23.15%; object-fit: cover; }
+.brand-logo { width: 36px; height: 36px; flex: none; display: block; }
 .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 17px; }
 
 .nav-links { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px; font-weight: 500; }
@@ -178,11 +184,11 @@ button { font: inherit; }
 }
 .swatches span { width: 20px; height: 20px; border-radius: 50%; transition: box-shadow .15s; }
 [data-accent-pick="green"] span { background: #187A4A; }
-[data-accent-pick="teal"]  span { background: #0F766E; }
+[data-accent-pick="bordeaux"] span { background: #8B1E3F; }
 [data-accent-pick="blue"]  span { background: #2563EB; }
 [data-accent-pick="amber"] span { background: #B45309; }
 :root[data-theme="dark"] [data-accent-pick="green"] span { background: #7BD3A2; }
-:root[data-theme="dark"] [data-accent-pick="teal"]  span { background: #5FD4C6; }
+:root[data-theme="dark"] [data-accent-pick="bordeaux"] span { background: #E58AA3; }
 :root[data-theme="dark"] [data-accent-pick="blue"]  span { background: #8AB4FF; }
 :root[data-theme="dark"] [data-accent-pick="amber"] span { background: #F5A55C; }
 .swatches button[aria-pressed="true"] span { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--a-solid); }

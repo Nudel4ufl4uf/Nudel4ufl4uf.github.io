@@ -18,7 +18,7 @@
       var dark = typeof s.dark === 'boolean' ? s.dark
         : !!(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
       d.setAttribute('data-theme', dark ? 'dark' : 'light');
-      d.setAttribute('data-accent', s.accent || 'green');
+      d.setAttribute('data-accent', ['green', 'bordeaux', 'blue', 'amber'].indexOf(s.accent) > -1 ? s.accent : 'green');
       d.setAttribute('lang', s.lang || ((navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en'));
     })();
   </script>
@@ -28,7 +28,18 @@
   <header class="site-header">
     <nav class="container nav" aria-label="Main">
       <a class="brand" href="../../index.html">
-        <img class="brand-logo" src="../../img/index/pk_logo_green.png" alt="" width="36" height="36">
+        <svg class="brand-logo" viewBox="0 0 1080 1080" width="36" height="36" aria-hidden="true">
+          <defs>
+            <linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--logo-1)"/><stop offset="1" style="stop-color:var(--logo-2)"/></linearGradient>
+            <radialGradient id="logo-glow" cx="0.2" cy="0.1" r="0.8"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="1080" height="1080" rx="250" fill="url(#logo-bg)"/>
+          <rect width="1080" height="1080" rx="250" fill="url(#logo-glow)"/>
+          <g fill="none" stroke="#fff" stroke-width="64" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M222 262V858H872"/><path d="M318 352L494 560L322 764"/>
+            <path d="M566 350V764M566 350H660C762 350 818 408 818 470C818 532 762 590 660 590H566"/>
+          </g>
+        </svg>
         <span class="brand-name">Philo Klemenz</span>
       </a>
       <div class="nav-panel" id="nav-panel">
@@ -43,9 +54,9 @@
           </button>
           <div class="swatches" role="group" data-i18n-aria="accentLabel" aria-label="Accent color">
             <button type="button" data-accent-pick="green" data-i18n-aria="accGreen" aria-label="Green"><span></span></button>
-            <button type="button" data-accent-pick="teal" data-i18n-aria="accTeal" aria-label="Teal"><span></span></button>
             <button type="button" data-accent-pick="blue" data-i18n-aria="accBlue" aria-label="Blue"><span></span></button>
             <button type="button" data-accent-pick="amber" data-i18n-aria="accAmber" aria-label="Amber"><span></span></button>
+            <button type="button" data-accent-pick="bordeaux" data-i18n-aria="accBordeaux" aria-label="Bordeaux"><span></span></button>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@
     navHome: 'Profil', navPortfolio: 'Portfolio', zoomLabel: 'Bild vergrößern', menuLabel: 'Menü',
     navExp: 'Werdegang', navSkills: 'Skills', navProjects: 'Projekte', navContact: 'Kontakt',
     langLabel: 'Sprache', darkLabel: 'Dunkelmodus', accentLabel: 'Akzentfarbe',
-    accGreen: 'Grün', accTeal: 'Petrol', accBlue: 'Blau', accAmber: 'Bernstein',
+    accGreen: 'Grün', accBordeaux: 'Bordeaux', accBlue: 'Blau', accAmber: 'Bernstein',
 
     badge: 'IT-Projektmanager @ ITU Consult',
     h1: 'Ich halte komplexe IT-Projekte auf Kurs.',
@@ -120,7 +120,23 @@
     document.querySelectorAll('[data-accent-pick]').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.accentPick === id));
     });
+    setFavicon(id);
     if (persist) save({ accent: id });
+  }
+
+  /* Tab icon follows the accent as well */
+  var LOGO = { green: ['#24A066', '#0C5A38'], bordeaux: ['#B83255', '#5E0F28'], blue: ['#5B9BFF', '#1B47C9'], amber: ['#FDB94E', '#B8560A'] };
+  function setFavicon(id) {
+    var link = document.querySelector('link[rel="icon"]');
+    var c = LOGO[id];
+    if (!link || !c) return;
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="' + c[0] + '"/><stop offset="1" stop-color="' + c[1] + '"/></linearGradient></defs>' +
+      '<rect width="1080" height="1080" rx="250" fill="url(#g)"/>' +
+      '<g fill="none" stroke="#fff" stroke-width="64" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M222 262V858H872M318 352L494 560L322 764M566 350V764M566 350H660C762 350 818 408 818 470C818 532 762 590 660 590H566"/></g></svg>';
+    link.type = 'image/svg+xml';
+    link.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
   }
 
   /* ---------- Wire up ---------- */
